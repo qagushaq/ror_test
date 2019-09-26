@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   http_basic_authenticate_with name: "admin", password: "1",
   except: [:index, :show]
 
-
   def index
     @post= Post.all
   end
@@ -32,10 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
-
   end
-
-
 
   def create
       #render plain: params[:post].inspect
